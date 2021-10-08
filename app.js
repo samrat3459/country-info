@@ -1,4 +1,4 @@
-fetch('https://restcountries.com/rest/v3.1/all')
+fetch('https://restcountries.com/v2/all')
     .then(res => res.json())
     .then(data => displayCountries(data));
 
@@ -24,7 +24,7 @@ const displayCountries = countries => {
 }
 
 const displayCountryDetail = name => {
-    const url = `https://restcountries.com/rest/v3.1/name/${name}`
+    const url = `https://restcountries.com/v2/name/${name}`
     fetch(url)
         .then(res => res.json())
         .then(data => renderCountryInfo(data[0]));
